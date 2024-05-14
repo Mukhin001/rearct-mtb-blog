@@ -1,4 +1,4 @@
-const HeaderLogin = () => {
+const Login = () => {
     return (
         <div className="HeaderLanguage">
             HeaderLogin
@@ -6,4 +6,4 @@ const HeaderLogin = () => {
     );
 };
 
-export default HeaderLogin;
+export default Login;

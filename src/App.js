@@ -1,7 +1,7 @@
 import './App.css';
-import Header from "./body/header";
-import Main from "./body/main";
 import React from "react";
+import Header from "./components/header/header";
+import Main from "./components/main/main";
 
 function App() {
     return (
@@ -11,5 +11,5 @@ function App() {
         </div>
     );
 }
- 
+
 export default App;

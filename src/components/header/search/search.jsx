@@ -1,4 +1,4 @@
-const HeaderSearch = () => {
+const Search = () => {
     return (
         <div className="HeaderLanguage">
             HeaderSearch
@@ -6,4 +6,4 @@ const HeaderSearch = () => {
     );
 };
 
-export default HeaderSearch;
+export default Search;

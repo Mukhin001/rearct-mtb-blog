@@ -1,7 +1,7 @@
 .HeaderMenuUl {
     display: flex;
     justify-content: space-between;
-   
+
 }
 
 .HeaderMenuUl li {
@@ -17,13 +17,23 @@
 }
 
 .HeaderMenuUl li:hover > .HeaderUnderMenu {
-  display: block;
-  color: blueviolet;
-  position: absolute;
-  width: 100%;
+    display: block;
+    color: blueviolet;
+    position: absolute;
+    width: 100%;
 }
 
 .HeaderMenuUl li:hover {
     background-color: burlywood;
     cursor: pointer;
+}
+
+
+.HeaderMenu ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.HeaderMenu ul li {
+    list-style-type: none;
 }

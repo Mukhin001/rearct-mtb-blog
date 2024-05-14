@@ -1,0 +1,8 @@
+.HeaderMenu ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.HeaderMenu ul li {
+    list-style-type: none;
+}

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 // import './index.css';
 // import App from './App';
-import './wrapper-css/common.css'
+import './body/wrapper-css/common.css'
 
 import Header from './body/header.jsx';
 import Main from './body/main.jsx';

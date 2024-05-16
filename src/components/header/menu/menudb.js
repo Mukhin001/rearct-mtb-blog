@@ -1,19 +1,20 @@
 const menudb = [
-    {
-        elements: [0, 1, 2, 3, 4, 5]
+    {   name: 'bikes',
+        description: ['street', 'dirt', 'park', 'trial', 'pump', 'dh']
     },
     {
-        elements: [0, 1, 2, 3, 4, 5]
+        name: 'frames',
+        description: ['street', 'dirt', 'park', 'trial', 'pump', 'dh']
     },
     {
-        elements: [0, 1, 2, 3, 4, 5]
+        name: 'bars',
+        description: ['chromol', 'aluminum', 'ns bikes', 'pride street', 'tsb', 'animal']
     },
     {
-        elements: [0, 1, 2, 3, 4, 5]
-    }
+        name: 'hubs',
+        description: ['front', 'casset', 'freecoster', 'hub', 'brands', 'animal']
+    },
 ];
-
-export const someone = ['xyu'];
 
 export default menudb;
 

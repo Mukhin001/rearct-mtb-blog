@@ -1,4 +1,4 @@
-.wrapper {
-    padding: 2rem;
+.wrapContent {
+    display: grid;
+    grid-template-columns:  10% 90%;
 }
-

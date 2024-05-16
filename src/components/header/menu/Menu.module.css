@@ -1,26 +1,31 @@
-.HeaderMenuUl {
+/* .HeaderMenuUl {
     display: flex;
-    justify-content: space-between;
-
-}
+} */
 
 .HeaderMenuUl li {
-    list-style-type: none;
-    margin-right: 10px;
-    position: relative;
     padding: 5px;
     border-radius: 10px;
+    list-style-type: none;
+    margin-right: 10px;
+}
+
+.HeaderMenuLi {
+    position: relative;
 }
 
 .HeaderUnderMenu {
     display: none;
+    
 }
 
 .HeaderMenuUl li:hover > .HeaderUnderMenu {
     display: block;
     color: blueviolet;
     position: absolute;
-    width: 100%;
+    background: bisque;
+    border-radius: 10px;
+    z-index: 5;
+    
 }
 
 .HeaderMenuUl li:hover {
@@ -28,12 +33,3 @@
     cursor: pointer;
 }
 
-
-.HeaderMenu ul {
-    display: flex;
-    justify-content: space-between;
-}
-
-.HeaderMenu ul li {
-    list-style-type: none;
-}

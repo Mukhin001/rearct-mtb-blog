@@ -2,22 +2,34 @@ import st from './Menu.module.css';
 
 import menudb from './menudb';
 
-const MenuOne = ({elements}) => {
+export const InsideMenu = (description) => {
+    //console.log(description.classCss.classCss);
+    const headerUnderMenu = {left: '0'};
+    const sideBarUnderMenu = {left: '80%',
+        top: 0
+    };
+    const styleUnderMenu = (description.classCss.classCss === 'SideBarMenu') ? sideBarUnderMenu : headerUnderMenu;
+
     return (
-        <div className={st.HeaderUnderMenu}>
-            <ul>
-                {elements.map((item, i) => (<li key={i}>{item}</li>))}
-            </ul>
+        <div className={st.HeaderUnderMenu} style={styleUnderMenu}>
+            {<ul>
+                {description.description.map((item, i) => (<li key={i}>{item}</li>))}
+            </ul>}
         </div>
     );
 };
 
-const Menu = () => {
+const Menu = (classCss) => {
+    let classCssProps = classCss;
+    const menuheader = {display: 'flex'};
+    const menuSideBar = {display: 'block'};
+    const styleUl = (classCss.classCss === 'SideBarMenu') ? menuSideBar : menuheader;
+
     return (
         <div className={st.HeaderMenu}>
-            <ul className={st.HeaderMenuUl}>
-                {menudb.map((item, i) => (<li> {i + 1} Menu <MenuOne elements={item.elements}/></li>))}
-            </ul>
+            {<ul style={styleUl} className={st.HeaderMenuUl}>
+                {menudb.map((item, i) => (<li className={st.HeaderMenuLi} key={i}> {item.name} <InsideMenu description={item.description} classCss={classCssProps}/></li>))}
+            </ul>}
         </div>
     );
 };

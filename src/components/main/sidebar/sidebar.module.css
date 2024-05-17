@@ -3,7 +3,9 @@
     background-color: burlywood;
     position: absolute;
     height: 200px;
-   
+
+    top: 100px;
+
 }
 
 .SideBarText::before {

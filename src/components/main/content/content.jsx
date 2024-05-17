@@ -1,9 +1,9 @@
 import st from './content.module.css';
 
-const Content = () => {
+const Content = (props) => {
     return (
         <div className={st.Content}>
-            Content 
+            {props?.content}
         </div>
     );
 };

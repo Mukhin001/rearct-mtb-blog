@@ -2,15 +2,22 @@ import st from './sidebar.module.css';
 import Menu from '../../header/menu/menu.jsx';
 import React from 'react';
 
-const SideBar = () => {
+const SideBar = (props) => {
+
+    const toggleClickTest = () => {
+        props.onContentSelected('testSidebarClick');
+    }
+
 
     return (
-       <div className={st.SideBarWrapper} >
-            <div className={st.SideBarText}></div>
-            <div className={st.SideBar} >
-                <Menu classCss={'SideBarMenu'}/>
+        <div className={st.SideBarWrapper}>
+            <div className={st.SideBarText}
+                 onClick={toggleClickTest}>sidebartextclicktest
             </div>
-       </div>
+            <div className={st.SideBar}>
+                <Menu onContentSelected={props.onContentSelected} classCss={'SideBarMenu'}/>
+            </div>
+        </div>
     );
 };
 

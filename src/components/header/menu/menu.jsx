@@ -4,22 +4,22 @@ import st from './Menu.module.css';
 import menudb from './menudb';
 
 
-
 const InsideMenu = (description) => {
     //console.log(description.classCss.classCss);
     const headerUnderMenu = {left: '0'};
-    const sideBarUnderMenu = {left: '80%',
+    const sideBarUnderMenu = {
+        left: '80%',
         top: 0
     };
     const styleUnderMenu = (description.classCss.classCss === 'SideBarMenu') ? sideBarUnderMenu : headerUnderMenu;
 
     //let btnLiMenu = React.createRef();
-    
-     function fBtnLiMenu(e) {
-            let nameBtnMenu  = e.target.textContent;
-        // export nameBtnMenu в блок ../../main/content.jsx.    
-        };
-    
+
+    function fBtnLiMenu(e) {
+        let nameBtnMenu = e.target.textContent;
+        // export nameBtnMenu в блок ../../main/content.jsx.
+    }
+
     return (
         <div className={st.HeaderUnderMenu} style={styleUnderMenu}>
             {<ul>
@@ -27,7 +27,7 @@ const InsideMenu = (description) => {
             </ul>}
         </div>
     );
-    
+
 };
 
 
@@ -40,7 +40,11 @@ const Menu = (classCss) => {
     return (
         <div className={st.HeaderMenu}>
             {<ul style={styleUl} className={st.HeaderMenuUl}>
-                {menudb.map((item, i) => (<li className={st.HeaderMenuLi} key={i}> {item.name} <InsideMenu description={item.description} classCss={classCssProps}/></li>))}
+                {menudb.map((item, i) => (
+                    <li className={st.HeaderMenuLi} key={i}
+                        onClick={() => classCss.onContentSelected(item.name)}> {item.name} <InsideMenu
+                        description={item.description}
+                        classCss={classCssProps}/></li>))}
             </ul>}
         </div>
     );

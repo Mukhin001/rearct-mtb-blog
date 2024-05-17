@@ -23,7 +23,7 @@ const InsideMenu = (description) => {
     return (
         <div className={st.HeaderUnderMenu} style={styleUnderMenu}>
             {<ul>
-                {description.description.map((item, i) => (<li key={i} onClick={fBtnLiMenu(nameBtn)}>{item}</li>))}
+                {description.description.map((item, i) => (<li key={i} onClick={fBtnLiMenu}>{item}</li>))}
             </ul>}
         </div>
     );

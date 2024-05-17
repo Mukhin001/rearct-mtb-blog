@@ -1,8 +1,11 @@
+import React from 'react';
 import st from './Menu.module.css';
 
 import menudb from './menudb';
 
-export const InsideMenu = (description) => {
+
+
+const InsideMenu = (description) => {
     //console.log(description.classCss.classCss);
     const headerUnderMenu = {left: '0'};
     const sideBarUnderMenu = {left: '80%',
@@ -10,14 +13,23 @@ export const InsideMenu = (description) => {
     };
     const styleUnderMenu = (description.classCss.classCss === 'SideBarMenu') ? sideBarUnderMenu : headerUnderMenu;
 
+    //let btnLiMenu = React.createRef();
+    
+     function fBtnLiMenu(e) {
+            let nameBtnMenu  = e.target.textContent;
+        // export nameBtnMenu в блок ../../main/content.jsx.    
+        };
+    
     return (
         <div className={st.HeaderUnderMenu} style={styleUnderMenu}>
             {<ul>
-                {description.description.map((item, i) => (<li key={i}>{item}</li>))}
+                {description.description.map((item, i) => (<li key={i} onClick={fBtnLiMenu(nameBtn)}>{item}</li>))}
             </ul>}
         </div>
     );
+    
 };
+
 
 const Menu = (classCss) => {
     let classCssProps = classCss;

@@ -1,6 +1,3 @@
-/* .HeaderMenuUl {
-    display: flex;
-} */
 
 .HeaderMenuUl li {
     padding: 5px;
@@ -11,22 +8,24 @@
 
 .HeaderMenuLi {
     position: relative;
+
 }
 
 .HeaderUnderMenu {
+    position: absolute;
+    z-index: 5;
     display: none;
-    
 }
 
-.HeaderMenuUl li:hover > .HeaderUnderMenu {
-    display: block;
+.HeaderMenuLi:hover  .HeaderUnderMenu {
     color: blueviolet;
-    position: absolute;
     background: bisque;
     border-radius: 10px;
-    z-index: 5;
-    
+    animation: ani 1.5s forwards;
+    display: block;
 }
+
+
 
 .HeaderMenuUl li:hover {
     background-color: burlywood;

@@ -1,9 +1,28 @@
 
 .SideBarWrapper {
     background-color: burlywood;
+    position: absolute;
+    height: 200px;
+   
+}
+
+.SideBarText::before {
+    content: 'y';
 }
 
 .SideBar {
-    display: none;
+    opacity: 0;
     background-color: burlywood;
+    transition: all 1s ease-out;
+    width: 30px;
+}
+
+
+.SideBarWrapper:hover .SideBar {
+    opacity: 1;
+    width: 70px;
+}
+
+.SideBarWrapper:hover .SideBarText::before {
+    content: 'X';
 }

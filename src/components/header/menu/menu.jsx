@@ -4,26 +4,25 @@ import st from './Menu.module.css';
 import menudb from './menudb';
 
 
-const InsideMenu = (description) => {
+const InsideMenu = (propsDescription) => {
     //console.log(description.classCss.classCss);
     const headerUnderMenu = {left: '0'};
     const sideBarUnderMenu = {
         left: '80%',
         top: 0
     };
-    const styleUnderMenu = (description.classCss.classCss === 'SideBarMenu') ? sideBarUnderMenu : headerUnderMenu;
-
-    //let btnLiMenu = React.createRef();
-
-    function fBtnLiMenu(e) {
-        let nameBtnMenu = e.target.textContent;
-        // export nameBtnMenu в блок ../../main/content.jsx.
-    }
+    const styleUnderMenu = (propsDescription.propsStyle.classCss === 'SideBarMenu') ? sideBarUnderMenu : headerUnderMenu;
 
     return (
         <div className={st.HeaderUnderMenu} style={styleUnderMenu}>
             {<ul>
-                {description.description.map((item, i) => (<li key={i} onClick={fBtnLiMenu}>{item}</li>))}
+                {propsDescription.description.map((item, i) => (
+                <li key={i} 
+                    onClick={(e) => 
+                        //console.log(e.target.textContent)
+                        propsDescription.clickLiContent(e.target.textContent)
+                    }
+                >{item}</li>))}
             </ul>}
         </div>
     );
@@ -31,20 +30,24 @@ const InsideMenu = (description) => {
 };
 
 
-const Menu = (classCss) => {
-    let classCssProps = classCss;
+const Menu = (propsStyle) => {
     const menuheader = {display: 'flex'};
     const menuSideBar = {display: 'block'};
-    const styleUl = (classCss.classCss === 'SideBarMenu') ? menuSideBar : menuheader;
-
+    const styleUl = (propsStyle.classCss === 'SideBarMenu') ? menuSideBar : menuheader;
+    
     return (
         <div className={st.HeaderMenu}>
             {<ul style={styleUl} className={st.HeaderMenuUl}>
                 {menudb.map((item, i) => (
                     <li className={st.HeaderMenuLi} key={i}
-                        onClick={() => classCss.onContentSelected(item.name)}> {item.name} <InsideMenu
+                         //onClick={() => propsStyle.onContentSelected(item.name)}
+                        
+                        > 
+                        {item.name} 
+                        <InsideMenu
                         description={item.description}
-                        classCss={classCssProps}/></li>))}
+                        propsStyle={propsStyle}
+                        /></li>))}
             </ul>}
         </div>
     );

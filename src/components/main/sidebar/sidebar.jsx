@@ -4,21 +4,27 @@ import React from 'react';
 
 const SideBar = (props) => {
 
-    const toggleClickTest = () => {
-        props.onContentSelected('testSidebarClick');
-    }
-
+    // const toggleClickTest = () => {
+    //     props.onContentSelected('testSidebarClick');
+    // }
+    console.log(props.clickLiContent);
 
     return (
         <div className={st.SideBarWrapper}>
             <div className={st.SideBarText}
-                 onClick={toggleClickTest}>sidebartextclicktest
+                 //onClick={toggleClickTest}
+                 >
             </div>
             <div className={st.SideBar}>
-                <Menu onContentSelected={props.onContentSelected} classCss={'SideBarMenu'}/>
+                <Menu 
+                   // onContentSelected={props.onContentSelected} 
+                   
+                classCss={'SideBarMenu'}/>
             </div>
         </div>
     );
+
+   
 };
 
 export default SideBar;
